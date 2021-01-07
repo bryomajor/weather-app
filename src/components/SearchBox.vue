@@ -14,7 +14,7 @@
 export default {
   data() {
     return {
-      query: ''
+      query: this.term
     }
   },
   watch: {
@@ -27,6 +27,9 @@ export default {
   props: {
     fetchWeather: {
       type: Function
+    },
+    term: {
+      type: String
     }
   }
 }

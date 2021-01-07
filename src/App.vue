@@ -1,7 +1,7 @@
 <template>
   <div id="app" :class="typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'warm' : ''">
     <main>
-      <search-box :fetchWeather="fetchWeather" @update-search-term="updateSearchTerm" />
+      <search-box :fetchWeather="fetchWeather" @update-search-term="updateSearchTerm" :term="query" />
       <weather-wrap :now="now" :weather="weather" />
     </main>
   </div>
@@ -18,8 +18,8 @@ export default {
   name: 'App',
   data() {
     return {
-      api_key: 'e904ef0126639cc0e9d4bc215bc152cc',
-      url_base: 'https://api.openweathermap.org/data/2.5/',
+      api_key: process.env.VUE_APP_API_KEY,
+      url_base: process.env.VUE_APP_API_URL,
       query: '',
       weather: {},
       now: moment()
@@ -44,6 +44,7 @@ export default {
     },
     setResults(results) {
       this.weather = results;
+      this.query = "";
     }
   }
 }
