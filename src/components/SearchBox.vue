@@ -3,7 +3,7 @@
     <input
       type="text"
       class="search-bar"
-      placeholder="Search..."
+      placeholder="Enter location to see it's weather conditions..."
       v-model="query"
       @keyup.enter="fetchWeather"
     />
