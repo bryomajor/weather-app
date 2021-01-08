@@ -63,6 +63,7 @@ body {
 
 #app {
   background-image: url('./assets/cold-bg.jpg');
+  background-position: center;
   background-size: cover;
   transition: 0.4s;
 }
